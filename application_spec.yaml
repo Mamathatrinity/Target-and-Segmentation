@@ -1,0 +1,24 @@
+application:
+  name: Target Segmentation
+  type: REST API + UI
+  database: SQL
+  environment: qa
+
+modules:
+  - name: Target
+    base_ui_path: /targets
+    apis:
+      - name: createTarget
+        method: POST
+        endpoint: /targets
+        required_fields:
+          - targetName
+          - targetType
+        success_status: 201
+        failure_status: [400, 409]
+        db_validation:
+          enabled: true
+          table: targets
+          unique_key: targetName
+        ui_validation:
+          enabled: true
