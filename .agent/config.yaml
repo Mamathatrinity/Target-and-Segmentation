@@ -1,0 +1,91 @@
+# Agent Framework Configuration
+agent:
+  name: "Target & Segmentation Test Agent"
+  version: "1.0.0"
+  mode: "autonomous"  # autonomous, interactive, debug
+  
+  memory:
+    enabled: true
+    persist_path: ".agent/memory.json"
+    max_history: 100
+    
+  self_healing:
+    enabled: true
+    patterns_path: ".agent/patterns.json"
+    auto_fix: true
+    confidence_threshold: 0.8
+    
+  reflection:
+    enabled: true
+    learn_from_failures: true
+    suggest_improvements: true
+
+# Application Configurations
+apps:
+  segments:
+    module: "tests.ui.test_segments"
+    page_object: "framework.page_objects.segments_page.SegmentsPage"
+    db_helpers: "tests.helpers.segments_db_helpers"
+    test_prefix: "test_seg_pos_"
+    features:
+      - view_list
+      - search
+      - create
+      - edit
+      - delete
+      - pagination
+      - filters
+      - sorting
+    
+  target_list:
+    module: "tests.ui.test_target_list"
+    page_object: "framework.page_objects.target_list_page.TargetListPage"
+    db_helpers: "tests.helpers.target_list_db_helpers"
+    test_prefix: "test_tl_pos_"
+    features:
+      - view_list
+      - create
+      - export
+      
+  universe_summary:
+    module: "tests.ui.test_universe_summary"
+    page_object: "framework.page_objects.universe_summary_page.UniverseSummaryPage"
+    test_prefix: "test_us_pos_"
+    features:
+      - view_summary
+      - filters
+      - charts
+
+# Validation Layers
+validations:
+  ui:
+    enabled: true
+    adapter: "framework.adapters.ui_adapter.UIAdapter"
+    mcp_tool: "ui_validator"
+    
+  api:
+    enabled: true
+    adapter: "framework.adapters.api_adapter.APIAdapter"
+    mcp_tool: "api_validator"
+    required_params:
+      brand_id: "BR000001"
+    
+  database:
+    enabled: true
+    adapter: "framework.adapters.db_adapter.DBAdapter"
+    mcp_tool: "mysql_connection"
+    
+  cross_layer:
+    enabled: true
+    compare_fields: ["name", "description", "id", "created_at"]
+
+# Reporting
+reporting:
+  allure:
+    enabled: true
+    results_dir: "allure-results"
+    generate_on_completion: true
+  screenshots:
+    on_failure: true
+    on_success: false
+    path: "reports/screenshots"

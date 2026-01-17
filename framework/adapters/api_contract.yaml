@@ -1,0 +1,239 @@
+# API Contract Definitions
+# Defines expected API response structures, field types, and validation rules
+
+segments:
+  # GET /segments - List all segments
+  list:
+    endpoint: "/api/segments"
+    method: "GET"
+    parameters:
+      required:
+        - brand_id
+      optional:
+        - page
+        - limit
+        - search
+        - status
+    
+    response:
+      status_code: 200
+      structure: "paginated"  # paginated, single, list
+      
+      fields:
+        - name: segment_id
+          type: string
+          required: true
+          pattern: "^SEG_[0-9A-Z]+$"
+          
+        - name: segment_name
+          type: string
+          required: true
+          min_length: 1
+          max_length: 255
+          
+        - name: description
+          type: string
+          required: false
+          
+        - name: status
+          type: string
+          required: true
+          allowed_values: ["active", "inactive", "draft", "archived"]
+          
+        - name: record_count
+          type: integer
+          required: true
+          min_value: 0
+          
+        - name: created_by
+          type: string
+          required: true
+          
+        - name: created_date
+          type: string
+          required: true
+          format: "iso8601"
+          
+        - name: modified_by
+          type: string
+          required: false
+          
+        - name: modified_date
+          type: string
+          required: false
+          format: "iso8601"
+          
+        - name: brand_id
+          type: string
+          required: true
+          pattern: "^BR[0-9]{6}$"
+      
+      pagination:
+        - name: total_count
+          type: integer
+          required: true
+          
+        - name: page
+          type: integer
+          required: true
+          min_value: 1
+          
+        - name: limit
+          type: integer
+          required: true
+          min_value: 1
+          max_value: 100
+          
+        - name: segments
+          type: array
+          required: true
+
+  # GET /segments/{id} - Get single segment
+  get_by_id:
+    endpoint: "/api/segments/{segment_id}"
+    method: "GET"
+    parameters:
+      required:
+        - segment_id
+        - brand_id
+    
+    response:
+      status_code: 200
+      structure: "single"
+      
+      fields:
+        - name: segment_id
+          type: string
+          required: true
+          
+        - name: segment_name
+          type: string
+          required: true
+          
+        - name: description
+          type: string
+          required: false
+          
+        - name: status
+          type: string
+          required: true
+          allowed_values: ["active", "inactive", "draft", "archived"]
+          
+        - name: record_count
+          type: integer
+          required: true
+          
+        - name: query
+          type: object
+          required: true
+          
+        - name: created_by
+          type: string
+          required: true
+          
+        - name: created_date
+          type: string
+          required: true
+
+  # POST /segments - Create new segment
+  create:
+    endpoint: "/api/segments"
+    method: "POST"
+    parameters:
+      required:
+        - brand_id
+    
+    request_body:
+      fields:
+        - name: segment_name
+          type: string
+          required: true
+          min_length: 1
+          max_length: 255
+          
+        - name: description
+          type: string
+          required: false
+          
+        - name: status
+          type: string
+          required: false
+          default: "draft"
+          
+        - name: query
+          type: object
+          required: true
+    
+    response:
+      status_code: 201
+      structure: "single"
+      
+      fields:
+        - name: segment_id
+          type: string
+          required: true
+          
+        - name: message
+          type: string
+          required: true
+
+  # PUT /segments/{id} - Update segment
+  update:
+    endpoint: "/api/segments/{segment_id}"
+    method: "PUT"
+    parameters:
+      required:
+        - segment_id
+        - brand_id
+    
+    request_body:
+      fields:
+        - name: segment_name
+          type: string
+          required: false
+          
+        - name: description
+          type: string
+          required: false
+          
+        - name: status
+          type: string
+          required: false
+    
+    response:
+      status_code: 200
+      structure: "single"
+
+  # DELETE /segments/{id} - Delete segment
+  delete:
+    endpoint: "/api/segments/{segment_id}"
+    method: "DELETE"
+    parameters:
+      required:
+        - segment_id
+        - brand_id
+    
+    response:
+      status_code: 200
+      fields:
+        - name: message
+          type: string
+          required: true
+
+target_list:
+  # Similar structure for target list endpoints
+  list:
+    endpoint: "/api/target-lists"
+    method: "GET"
+    response:
+      status_code: 200
+      structure: "paginated"
+
+universe_summary:
+  # Similar structure for universe summary endpoints
+  get:
+    endpoint: "/api/universe/summary"
+    method: "GET"
+    response:
+      status_code: 200
+      structure: "single"

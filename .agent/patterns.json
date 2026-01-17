@@ -1,0 +1,45 @@
+{
+  "database_patterns": [
+    {
+      "pattern_id": "db_001",
+      "name": "is_deleted_column_missing",
+      "description": "INSERT query includes 'is_deleted' column that doesn't exist in schema",
+      "detection": "pymysql.err.OperationalError.*Unknown column 'is_deleted'",
+      "fix_action": "remove_column_from_query",
+      "target_column": "is_deleted",
+      "auto_fix": true,
+      "severity": "high"
+    }
+  ],
+  "api_patterns": [
+    {
+      "pattern_id": "api_001",
+      "name": "missing_brand_id",
+      "description": "API call missing required brand_id parameter",
+      "detection": "400 Bad Request|brand_id.*required",
+      "fix_action": "add_brand_id_parameter",
+      "parameter": "brand_id",
+      "default_value": "BR000001",
+      "auto_fix": true,
+      "severity": "high"
+    }
+  ],
+  "data_structure_patterns": [
+    {
+      "pattern_id": "ds_001",
+      "name": "dict_treated_as_list",
+      "description": "Function returns dict with 'segments' key but code treats it as list",
+      "detection": "KeyError.*slice",
+      "fix_action": "extract_dict_key",
+      "key_to_extract": "segments",
+      "functions_affected": ["get_segments_paginated"],
+      "auto_fix": true,
+      "severity": "medium"
+    }
+  ],
+  "metadata": {
+    "total_patterns": 3,
+    "auto_fixable": 3,
+    "last_updated": "2026-01-16"
+  }
+}

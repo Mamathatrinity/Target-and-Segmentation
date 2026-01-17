@@ -1,0 +1,11 @@
+{
+	"servers": {
+		"validation-server": {
+			"type": "stdio",
+			"command": "python",
+			"args": ["C:/Users/mv/mcp_servers/validation_mcp_server/server.py"],
+			"env": {}
+		}
+	},
+	"inputs": []
+}

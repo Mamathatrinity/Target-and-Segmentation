@@ -1,0 +1,4 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"1","Segments Management","0","Sorting - My Segments","0","0","TC_SEG_SORT_MY_001: Sort by Name - Ascending","0"
+"1","Segments Management","0","Search","0","0","TC_SEG_SEARCH_001: Search - Exact Match","0"
+"1","Segments Management","0","Search","0","0","TC_SEG_SEARCH_002: Search - Partial Match","0"

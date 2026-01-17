@@ -1,0 +1,39 @@
+﻿Folder PATH listing for volume Windows
+Volume serial number is 2E4E-CF5A
+C:.
+|   .gitignore
+|   PROJECT_STRUCTURE.txt
+|   pytest.ini
+|   QUICKSTART.md
+|   README.md
+|   requirements.txt
+|   setup.ps1
+|   
++---.vscode
+|       mcp.json
+|       
++---config
+|       .env.example
+|       settings.py
+|       test_data.json
+|       
++---framework
+|   |   __init__.py
+|   |   
+|   +---api_helpers
+|   +---db_helpers
+|   \---page_objects
++---reports
++---screenshots
+\---tests
+    |   conftest.py
+    |   
+    +---api
+    |       test_endpoints.py
+    |       
+    +---database
+    |       test_data_integrity.py
+    |       
+    \---ui
+            test_login.py
+            

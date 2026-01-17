@@ -1,0 +1,38 @@
+{
+  "users": {
+    "admin": {
+      "username": "admin@test.com",
+      "password": "Admin@123",
+      "role": "administrator"
+    },
+    "regular_user": {
+      "username": "user@test.com",
+      "password": "User@123",
+      "role": "user"
+    }
+  },
+  "api_endpoints": {
+    "auth": "/auth/login",
+    "targets": "/api/targets",
+    "segments": "/api/segments",
+    "users": "/api/users"
+  },
+  "test_segments": [
+    {
+      "name": "High Value Customers",
+      "criteria": "purchase_amount > 1000",
+      "expected_count": 100
+    },
+    {
+      "name": "New Users",
+      "criteria": "signup_date > '2026-01-01'",
+      "expected_count": 50
+    }
+  ],
+  "database_tables": {
+    "users": "users",
+    "segments": "segments",
+    "targets": "targets",
+    "campaigns": "campaigns"
+  }
+}

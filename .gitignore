@@ -1,0 +1,10 @@
+﻿# .gitignore
+__pycache__/
+*.py[cod]
+.env
+screenshots/*.png
+reports/*.html
+reports/*.xml
+allure-results/
+.pytest_cache/
+*.log

@@ -1,0 +1,22 @@
+{
+  "fixed_bugs": [
+    {
+      "bug_id": "TEST_001",
+      "description": "Framework verification test",
+      "file": null,
+      "line": null,
+      "pattern": null,
+      "fix_action": null,
+      "fixed_at": "2026-01-16 11:35:26.057796",
+      "tests_affected": []
+    }
+  ],
+  "known_patterns": [],
+  "test_results": {},
+  "last_updated": "2026-01-16 11:35:26.057796",
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-01-16",
+    "description": "Agent memory - tracks bugs, patterns, and results to prevent loops"
+  }
+}

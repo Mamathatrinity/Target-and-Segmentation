@@ -1,0 +1,22 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+    TC_SEG_SORT_MY_001: Sort My Segments by Name - Ascending
+    
+    Validates:
+    - UI displays segments sorted by name A-Z
+    - API returns sorted results with sort=name&order=asc
+    - DB query with ORDER BY name ASC
+    ","231","test_seg_sort_my_001_name_asc","tests.ui","2026-01-16","broken","2026-01-16","","test_segments_comprehensive","",""
+"
+    TC_SEG_SEARCH_001: Search with exact segment name match
+    
+    Validates:
+    - UI displays exact match result
+    - API returns exact match with search parameter
+    - DB query with exact name match
+    ","81","test_seg_search_001_exact_match","tests.ui","2026-01-16","broken","2026-01-16","","test_segments_comprehensive","",""
+"
+    TC_SEG_SEARCH_002: Search with partial segment name
+    
+    Validates partial string matching in search
+    ","102","test_seg_search_002_partial_match","tests.ui","2026-01-16","broken","2026-01-16","","test_segments_comprehensive","",""

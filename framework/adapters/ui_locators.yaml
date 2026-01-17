@@ -1,0 +1,273 @@
+# UI Locators Configuration
+# Separates UI element selectors from test code for easy maintenance
+
+segments:
+  # List Page
+  list_page:
+    page_title:
+      selector: "h1.page-title"
+      type: "css"
+      description: "Segments page title"
+    
+    search_box:
+      selector: "input[data-testid='segment-search']"
+      type: "css"
+      description: "Search input field"
+    
+    search_button:
+      selector: "button[data-testid='search-submit']"
+      type: "css"
+      description: "Search submit button"
+    
+    create_button:
+      selector: "button[data-testid='create-segment']"
+      type: "css"
+      description: "Create new segment button"
+    
+    segments_table:
+      selector: "table[data-testid='segments-table']"
+      type: "css"
+      description: "Segments data table"
+    
+    table_rows:
+      selector: "table[data-testid='segments-table'] tbody tr"
+      type: "css"
+      description: "Table rows containing segment data"
+    
+    segment_row:
+      selector: "[data-segment-id='{segment_id}']"
+      type: "css"
+      description: "Specific segment row by ID"
+      dynamic: true
+    
+    segment_name_cell:
+      selector: "[data-segment-id='{segment_id}'] .segment-name"
+      type: "css"
+      description: "Segment name cell"
+      dynamic: true
+    
+    segment_status_cell:
+      selector: "[data-segment-id='{segment_id}'] .segment-status"
+      type: "css"
+      description: "Segment status cell"
+      dynamic: true
+    
+    segment_count_cell:
+      selector: "[data-segment-id='{segment_id}'] .record-count"
+      type: "css"
+      description: "Segment record count cell"
+      dynamic: true
+    
+    edit_button:
+      selector: "[data-segment-id='{segment_id}'] .edit-btn"
+      type: "css"
+      description: "Edit segment button"
+      dynamic: true
+    
+    delete_button:
+      selector: "[data-segment-id='{segment_id}'] .delete-btn"
+      type: "css"
+      description: "Delete segment button"
+      dynamic: true
+    
+    pagination:
+      next_button:
+        selector: "button[data-testid='pagination-next']"
+        type: "css"
+        description: "Next page button"
+      
+      prev_button:
+        selector: "button[data-testid='pagination-prev']"
+        type: "css"
+        description: "Previous page button"
+      
+      page_number:
+        selector: "span[data-testid='page-number']"
+        type: "css"
+        description: "Current page number"
+      
+      total_pages:
+        selector: "span[data-testid='total-pages']"
+        type: "css"
+        description: "Total pages count"
+    
+    filters:
+      status_filter:
+        selector: "select[data-testid='status-filter']"
+        type: "css"
+        description: "Status filter dropdown"
+      
+      date_filter:
+        selector: "input[data-testid='date-filter']"
+        type: "css"
+        description: "Date range filter"
+      
+      apply_filters:
+        selector: "button[data-testid='apply-filters']"
+        type: "css"
+        description: "Apply filters button"
+      
+      clear_filters:
+        selector: "button[data-testid='clear-filters']"
+        type: "css"
+        description: "Clear filters button"
+  
+  # Create/Edit Page
+  create_page:
+    form:
+      selector: "form[data-testid='segment-form']"
+      type: "css"
+      description: "Segment creation/edit form"
+    
+    segment_name_input:
+      selector: "input[name='segment_name']"
+      type: "css"
+      description: "Segment name input field"
+    
+    description_input:
+      selector: "textarea[name='description']"
+      type: "css"
+      description: "Segment description textarea"
+    
+    status_dropdown:
+      selector: "select[name='status']"
+      type: "css"
+      description: "Segment status dropdown"
+    
+    query_builder:
+      selector: "div[data-testid='query-builder']"
+      type: "css"
+      description: "Query builder component"
+    
+    add_condition_button:
+      selector: "button[data-testid='add-condition']"
+      type: "css"
+      description: "Add query condition button"
+    
+    save_button:
+      selector: "button[data-testid='save-segment']"
+      type: "css"
+      description: "Save segment button"
+    
+    cancel_button:
+      selector: "button[data-testid='cancel']"
+      type: "css"
+      description: "Cancel button"
+    
+    validation_error:
+      selector: ".error-message"
+      type: "css"
+      description: "Validation error message"
+  
+  # Delete Confirmation Dialog
+  delete_dialog:
+    modal:
+      selector: "div[data-testid='delete-modal']"
+      type: "css"
+      description: "Delete confirmation modal"
+    
+    confirm_button:
+      selector: "button[data-testid='confirm-delete']"
+      type: "css"
+      description: "Confirm delete button"
+    
+    cancel_button:
+      selector: "button[data-testid='cancel-delete']"
+      type: "css"
+      description: "Cancel delete button"
+    
+    message:
+      selector: "div[data-testid='delete-message']"
+      type: "css"
+      description: "Delete confirmation message"
+
+target_list:
+  # Target List specific locators
+  list_page:
+    page_title:
+      selector: "h1.target-list-title"
+      type: "css"
+      description: "Target List page title"
+    
+    create_button:
+      selector: "button[data-testid='create-target-list']"
+      type: "css"
+      description: "Create new target list button"
+    
+    export_button:
+      selector: "button[data-testid='export-target-list']"
+      type: "css"
+      description: "Export target list button"
+    
+    target_list_table:
+      selector: "table[data-testid='target-lists-table']"
+      type: "css"
+      description: "Target lists data table"
+
+universe_summary:
+  # Universe Summary specific locators
+  summary_page:
+    page_title:
+      selector: "h1.universe-summary-title"
+      type: "css"
+      description: "Universe Summary page title"
+    
+    total_count:
+      selector: "div[data-testid='total-count']"
+      type: "css"
+      description: "Total universe count"
+    
+    refresh_button:
+      selector: "button[data-testid='refresh-summary']"
+      type: "css"
+      description: "Refresh summary button"
+    
+    breakdown_chart:
+      selector: "div[data-testid='universe-breakdown']"
+      type: "css"
+      description: "Universe breakdown chart"
+
+# Common Elements (shared across pages)
+common:
+  header:
+    logo:
+      selector: "img.logo"
+      type: "css"
+      description: "Application logo"
+    
+    user_menu:
+      selector: "div[data-testid='user-menu']"
+      type: "css"
+      description: "User menu dropdown"
+    
+    logout_button:
+      selector: "button[data-testid='logout']"
+      type: "css"
+      description: "Logout button"
+  
+  notifications:
+    success_toast:
+      selector: ".toast.success"
+      type: "css"
+      description: "Success notification toast"
+    
+    error_toast:
+      selector: ".toast.error"
+      type: "css"
+      description: "Error notification toast"
+    
+    info_toast:
+      selector: ".toast.info"
+      type: "css"
+      description: "Info notification toast"
+  
+  loading:
+    spinner:
+      selector: ".loading-spinner"
+      type: "css"
+      description: "Loading spinner"
+    
+    overlay:
+      selector: ".loading-overlay"
+      type: "css"
+      description: "Loading overlay"

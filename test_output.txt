@@ -1,0 +1,156 @@
+﻿[1m============================= test session starts =============================[0m
+platform win32 -- Python 3.12.10, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\mv\Target_and_Segmentation_Automation\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.10', 'Platform': 'Windows-11-10.0.26100-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'allure-pytest': '2.15.3', 'Faker': '40.1.0', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'html': '4.1.1', 'metadata': '3.1.1', 'playwright': '0.7.2', 'timeout': '2.4.0', 'xdist': '3.8.0'}, 'Base URL': ''}
+rootdir: C:\Users\mv\Target_and_Segmentation_Automation
+configfile: pytest.ini
+plugins: allure-pytest-2.15.3, Faker-40.1.0, asyncio-1.3.0, base-url-2.1.0, html-4.1.1, metadata-3.1.1, playwright-0.7.2, timeout-2.4.0, xdist-3.8.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+C:/Users/mv/Target_and_Segmentation_Automation/.venv/Scripts/python.exe : 
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:56: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+At line:1 char:1
++ C:/Users/mv/Target_and_Segmentation_Automation/.venv/Scripts/python.e ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\mv\Tar...ow-to/mark.html:String) [],  
+   RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:200: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:325: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:525: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:621: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:704: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:783: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:861: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:952: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:1046: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:1138: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:1212: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:1285: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:1393: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+C:\Users\mv\Target_and_Segmentation_Automation\tests\ui\test_segments.py:1489: 
+PytestUnknownMarkWarning: Unknown pytest.mark.segments_positive - is this a typo?  You can 
+register custom marks to avoid this warning - for details, see 
+https://docs.pytest.org/en/stable/how-to/mark.html
+  @pytest.mark.segments_positive
+[1mcollecting ... [0mcollected 1 item
+
+tests/ui/test_segments.py::test_seg_pos_001_view_segments_list [31mERROR[0m
+
+=================================== ERRORS ====================================
+[31m[1m____________ ERROR at setup of test_seg_pos_001_view_segments_list ____________[0m
+[1m[31m.venv\Lib\site-packages\pytest_asyncio\plugin.py[0m:728: in pytest_fixture_setup
+    [0m[94mreturn[39;49;00m ([94myield[39;49;00m)[90m[39;49;00m
+            ^^^^^[90m[39;49;00m
+[1m[31mtests\conftest.py[0m:159: in browser_context
+    \x1b[0m\x1b[96mprint\x1b[39;49;00m(\x1b[33mf\x1b[39;49;00m\x1b[33m"\x1b[39;49;00m\x1b[33m\\n\x1b[39;49;00m\x1b[33m\U0001f527 Browser selected: \x1b[39;49;00m\x1b[33m{\x1b[39;49;00mbrowser_type\x1b[33m}\x1b[39;49;00m\x1b[33m (INCOGNITO MODE)\x1b[39;49;00m\x1b[33m"\x1b[39;49;00m)\x1b[90m\x1b[39;49;00m
+[1m[31mC:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py[0m:19: in encode
+    [0m[94mreturn[39;49;00m codecs.charmap_encode([96minput[39;49;00m,[96mself[39;49;00m.errors,encoding_table)[[94m0[39;49;00m][90m[39;49;00m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[90m[39;49;00m
+[1m[31mE   UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f527' in position 2: character maps to <undefined>[0m
+----------------------------- Captured log setup ------------------------------
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.address`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.address` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.automotive`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.automotive` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.bank`.
+[35mDEBUG   [0m faker.factory:factory.py:88 Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.barcode`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.barcode` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.color`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.color` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.company`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.company` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.credit_card`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.credit_card` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.currency`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.currency` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.date_time`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.date_time` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.doi` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.geo`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.geo` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.internet`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.internet` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.isbn`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.isbn` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.job`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.job` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.lorem`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.lorem` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.misc`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.misc` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.passport`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.passport` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.person`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.person` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.phone_number`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.phone_number` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.ssn`.
+[35mDEBUG   [0m faker.factory:factory.py:97 Provider `faker.providers.ssn` has been localized to `en_US`.
+[35mDEBUG   [0m faker.factory:factory.py:108 Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not used for this provider.
+[35mDEBUG   [0m asyncio:proactor_events.py:634 Using proactor: IocpProactor
+[36m[1m=========================== short test summary info ===========================[0m
+[31mERROR[0m tests/ui/test_segments.py::[1mtest_seg_pos_001_view_segments_list[0m - UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f527' in position 2: character maps to <undefined>
+[31m============================== [31m[1m1 error[0m[31m in 1.53s[0m[31m ===============================[0m

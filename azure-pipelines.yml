@@ -1,0 +1,108 @@
+# Azure DevOps Pipeline
+# CI/CD for Trinity HCP Targeting & Segmentation Test Automation
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+
+pr:
+  branches:
+    include:
+      - main
+      - develop
+
+schedules:
+  - cron: "0 2 * * *"  # Daily at 2 AM
+    displayName: Daily automated test run
+    branches:
+      include:
+        - main
+    always: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  pythonVersion: '3.11'
+
+stages:
+  - stage: Test
+    displayName: 'Run Automated Tests'
+    jobs:
+      - job: LoginTests
+        displayName: 'Login Module Tests'
+        strategy:
+          matrix:
+            Chromium:
+              browserName: 'chromium'
+            Firefox:
+              browserName: 'firefox'
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '$(pythonVersion)'
+            displayName: 'Use Python $(pythonVersion)'
+          
+          - script: |
+              python -m pip install --upgrade pip
+              pip install -r requirements.txt
+            displayName: 'Install Python Dependencies'
+          
+          - script: |
+              playwright install $(browserName)
+              playwright install-deps
+            displayName: 'Install Playwright Browsers'
+          
+          - script: |
+              echo "APP_URL=$(APP_URL)" >> config/.env
+              echo "API_BASE_URL=$(API_BASE_URL)" >> config/.env
+              echo "TEST_USER_EMAIL=$(TEST_USER_EMAIL)" >> config/.env
+              echo "TEST_USER_PASSWORD=$(TEST_USER_PASSWORD)" >> config/.env
+              echo "DB_SERVER=$(DB_SERVER)" >> config/.env
+              echo "DB_NAME=$(DB_NAME)" >> config/.env
+              echo "DB_USER=$(DB_USER)" >> config/.env
+              echo "DB_PASSWORD=$(DB_PASSWORD)" >> config/.env
+            displayName: 'Configure Environment Variables'
+            env:
+              APP_URL: $(APP_URL)
+              API_BASE_URL: $(API_BASE_URL)
+              TEST_USER_EMAIL: $(TEST_USER_EMAIL)
+              TEST_USER_PASSWORD: $(TEST_USER_PASSWORD)
+              DB_SERVER: $(DB_SERVER)
+              DB_NAME: $(DB_NAME)
+              DB_USER: $(DB_USER)
+              DB_PASSWORD: $(DB_PASSWORD)
+          
+          - script: |
+              pytest tests/ui/test_login.py \
+                --browser=$(browserName) \
+                --headless \
+                -v -s \
+                --html=reports/report_$(browserName).html \
+                --self-contained-html \
+                --junitxml=reports/junit_$(browserName).xml
+            displayName: 'Run Login Tests'
+            continueOnError: true
+          
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFiles: 'reports/junit_*.xml'
+              testRunTitle: 'Login Tests - $(browserName)'
+            displayName: 'Publish Test Results'
+            condition: always()
+          
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: 'reports'
+              ArtifactName: 'test-reports-$(browserName)'
+            displayName: 'Publish Test Reports'
+            condition: always()
+          
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: 'reports/screenshots'
+              ArtifactName: 'screenshots-$(browserName)-$(Build.BuildNumber)'
+            displayName: 'Publish Screenshots'
+            condition: failed()
